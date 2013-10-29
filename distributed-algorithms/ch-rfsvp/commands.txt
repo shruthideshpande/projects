@@ -1,0 +1,40 @@
+WRITE 2 "This is first write to 2"
+WAIT -1
+WRITE 2 "This is second write to 2"
+WAIT -1
+NODE-DOWN 3
+WAIT 10
+NODE-DOWN 4
+WRITE 0 "First Partition with 0,1,2"
+WAIT -1
+READ 2
+WAIT 20
+NODE-DOWN 2
+WAIT -1
+WRITE 0 "Second partition with 0,1"
+WAIT -1
+NODE-DOWN 0
+WAIT 5
+NODE-UP 2
+WAIT 0
+NODE-UP 3
+WAIT 0
+NODE-UP 4
+WAIT -1
+WRITE 1 "Third partition with 1,2,3,4"
+WAIT -1
+NODE-DOWN 1
+WAIT -1
+WRITE 4 "Fourth partition with 2,3,4"
+WAIT -1
+READ 2
+WAIT 20
+HALT 0
+WAIT 0
+HALT 1
+WAIT 0
+HALT 2
+WAIT 0
+HALT 3
+WAIT 0
+HALT 4
